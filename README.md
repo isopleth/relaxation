@@ -5,7 +5,7 @@ The oscillator uses an inverter to charge and discharge a capacitor.  When the
 voltage across the capacitor reaches the threshold for changing the inverter
 state, the inverter flips its state and starts discharging the capacitor if it was previously charging it, or starts charging the capacitor if it was discharging it.  The period depends upon to the time constant of the RC circuit, but is modified because of the state change thresholds in the inverter. This is a simple numeric simulation to determine the frequency given specified values for the components.
 
-![Relaxation ocillator circuit](scematics/circuit.png)
+![Relaxation ocillator circuit](schematic/circuit.png)
 
 Build it using:
 
