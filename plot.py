@@ -52,7 +52,7 @@ if os.path.exists(descrFile):
     cap = plt.plot(data[:,0],data[:,1],label="capacitor")
     out = plt.plot(data[:,0],data[:,2],label="output")
     plt.legend()
-    outputFile = "plot.png"
+    outputFile = "plot.pdf"
     plt.savefig(outputFile)
     plt.draw()
     plt.close()
