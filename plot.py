@@ -49,8 +49,8 @@ if os.path.exists(descrFile):
     plt.xlabel("seconds")
     plt.ylabel("volts")
 
-    cap = plt.plot(data[:,0],data[:,1],label="capacitor")
-    out = plt.plot(data[:,0],data[:,2],label="output")
+    cap = plt.plot(data[:,0],data[:,1],label="capacitor voltage")
+    out = plt.plot(data[:,0],data[:,2],label="inverter output voltage")
     plt.legend()
     outputFile = "plot.pdf"
     plt.savefig(outputFile)

@@ -104,17 +104,36 @@ public:
 class Inverter {
 private:
   // Output voltage in high state
-  floating outputHi;
+  const floating outputHi;
   // Output voltage in low state
-  floating outputLow;
+  const floating outputLow;
   // Input voltage needed for transition of input from high to low state
-  floating hiLowTransition;
+  const floating hiLowTransition;
   // Input voltage needed for transistion of input from low to high state
-  floating lowHiTransition;
+  const floating lowHiTransition;
   // Current output state - true if high
   bool hi;
   
 public:
+  /**
+   * Set the input voltage.
+   *
+   * @param voltage input voltage
+   */
+  auto setInputVoltage(floating voltage) {
+    if (!hi) {
+      if (voltage <= hiLowTransition) {
+	// Input state is false, so output state is true
+	hi = true;
+      }
+    }
+    else if (voltage >= lowHiTransition) {
+      // Input state is high, so output state is false
+      hi = false;
+    }
+  }
+
+
   /**
    * Constructor. Initial state is low.
    *
@@ -133,24 +152,6 @@ public:
     hiLowTransition{hiLowTransition},
     lowHiTransition{lowHiTransition} {
     setInputVoltage(voltage);
-  }
-
-  /**
-   * Set the input voltage.
-   *
-   * @param voltage input voltage
-   */
-  void setInputVoltage(floating voltage) {
-    if (!hi) {
-      if (voltage <= hiLowTransition) {
-	// Input state is false, so output state is true
-	hi = true;
-      }
-    }
-    else if (voltage >= lowHiTransition) {
-      // Input state is high, so output state is false
-      hi = false;
-    }
   }
 
   /**
@@ -351,8 +352,7 @@ int main(int argc, char** argv) {
     inverter.setInputVoltage(capacitor.voltage());
     auto inverterOutput = inverter.getOutputVoltage();
     out << step * timestepSize << "," <<
-      capacitor.voltage() <<
-      ", " << inverterOutput << "\n";
+      capacitor.voltage() << ", " << inverterOutput << "\n";
 
     if (!lastInverterOutput.has_value()) {
       lastInverterOutput = inverterOutput;
