@@ -39,4 +39,7 @@ e.g.
 Any parameters missing take a default value.
 
 plot.py is a Python 3 script that plots the contents of output.csv, generating
-the title of the plot from some of the contents of description.dat.
+the title of the plot from some of the contents of description.dat.  It produces a PDF format plot that looks something like this (depending upon parameters):
+
+
+![plot](images/plot.png)
