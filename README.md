@@ -32,6 +32,10 @@ Run it using:
 
 `./relaxation <RESISTANCE> <CAPACITANCE> <LH> <LL> <LLT> <LHT>`
 
+e.g.
+
+`./relaxation 1e4 1e-6 0 5 0.6 2.5`
+
 Any parameters missing take a default value.
 
 plot.py is a Python 3 script that plots the contents of output.csv, generating
