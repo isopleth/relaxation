@@ -23,7 +23,8 @@ LH = 5
 LL = 0
 LLT = 2.5
 LHT = 0.6
-FREQUENCY = 5018.82```
+FREQUENCY = 5018.82
+```
 
 LH is the logic high output voltage of the inverter, and LL the logic low voltage.  LLT and LHT are the low-to-high and high-to-low transition voltages for the inverter input logic.
 
