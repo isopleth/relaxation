@@ -10,7 +10,7 @@ clean:
 	- rm plot.pdf
 	- rm description.dat
 
-plot.pdf : relaxation.cpp plot.py
+plot.pdf : relaxation plot.py
 	./relaxation 1e4 1e-6 0 5 0.6 2.5
 	python3 plot.py
 
