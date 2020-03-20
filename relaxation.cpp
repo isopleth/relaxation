@@ -121,15 +121,14 @@ public:
    * @param voltage input voltage
    */
   auto setInputVoltage(floating voltage) {
-    if (!hi) {
-      if (voltage <= hiLowTransition) {
-	// Input state is false, so output state is true
-	hi = true;
+    if (hi) {
+      if (voltage >= lowHiTransition) {
+	// Input state is high, so output state is false
+	hi = false;
       }
-    }
-    else if (voltage >= lowHiTransition) {
-      // Input state is high, so output state is false
-      hi = false;
+    } else if (voltage <= hiLowTransition) {
+      // Input state is false, so output state is true
+      hi = true;
     }
   }
 
