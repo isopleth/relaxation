@@ -1,4 +1,6 @@
-all:
+all: relaxation
+
+relaxation: relaxation.cpp
 	g++ -std=c++17 -o relaxation relaxation.cpp
 
 run:
