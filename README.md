@@ -43,3 +43,8 @@ the title of the plot from some of the contents of description.dat.  It produces
 
 
 ![plot](images/plot.png)
+
+n.b. the gSchem symbol for an inverter, in schematic/INV1-1.sym, that
+I have used to draw the circuit diagram, is by jpd@noqsi.com, and
+licensed under the GNU General Public License.  See http://www.gedasymbols.org/user/john_doty/symbols/openIP/INV1-1.sym
+
