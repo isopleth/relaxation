@@ -338,7 +338,7 @@ int main(int argc, char** argv) {
   }
   std::cout << "\n";
 
-  auto stateMonitor = StateMonitor();
+  auto stateMonitor = StateMonitor{};
   auto lastInverterOutput = std::optional<floating>{};
   for (auto step = 0; step < numberOfTimesteps; step++) {
     auto capacitorVoltage = capacitor.voltage();
