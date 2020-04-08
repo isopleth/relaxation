@@ -42,7 +42,7 @@ def test(a, b):
 
 def makeFriendly(value, symbol):
     """ Convert component value to conventional notation. e.g. 10e6 to
-    1 M.  """
+    10 M.  """
     decimal.getcontext().prec = 5
     val1 = decimal.Decimal(value)
     order = 0
@@ -67,24 +67,15 @@ def makeFriendly(value, symbol):
         while val1[-1] == '0':
             val1 = val1[:-1]
 
-    if order == -12:
-        returnValue = val1 + " p";
-    elif order == -9:
-        returnValue = val1 + " n";
-    elif order == -6:
-        returnValue = val1 + " " + MICRO_SYMBOL;
-    elif order == -3:
-        returnValue = val1 + " m";
-    elif order == 3:
-        returnValue = val1 + " k";
-    elif order == 6:
-        returnValue = val1 + " M";
-    elif order == 9:
-        returnValue = val1 + " G";
-    elif order == 12:
-        returnValue = val1 + " T";
+    prefixes = {"-12": "p", "-9": "n", "-6": MICRO_SYMBOL, "-3": "m",
+                "12": "T", "9": "G", "6": "M", "3": "k" }
+                
+    order = str(order)
+    if order in prefixes:
+        returnValue = val1 + " " + prefixes[order]
     else:
         returnValue = str(value) + " ";
+
     return returnValue + symbol
 
 parser = argparse.ArgumentParser(description="Plot relaxation program output")
