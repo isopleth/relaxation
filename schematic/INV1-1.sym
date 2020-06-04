@@ -44,8 +44,6 @@ pinlabel=Y
 T 750 300 5 8 0 1 0 8 1
 pintype=out
 }
-T 500 300 9 10 1 0 0 4 1
-1
 T 800 0 8 10 0 0 0 0 1
 footprint=none
 T 0 0 8 10 0 0 0 0 1

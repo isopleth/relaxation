@@ -46,5 +46,23 @@ the title of the plot from some of the contents of description.dat.  It produces
 
 n.b. the gSchem symbol for an inverter, in schematic/INV1-1.sym, that
 I have used to draw the circuit diagram, is by jpd@noqsi.com, and
-licensed under the GNU General Public License.  See http://www.gedasymbols.org/user/john_doty/symbols/openIP/INV1-1.sym
+licensed under the GNU General Public License.  I have modified it slightly
+to remove the prominant "1" from the inverter body. See http://www.gedasymbols.org/user/john_doty/symbols/openIP/INV1-1.sym
+
+## Build environment
+
+The build environment was Ubuntu 20.04.  The `Makefile` targets are:
+
+1. _default_ Rebuild relaxation executable and plot.pdf
+1. relaxation Rebuild relaxation executable
+1. clean Delete all targets
+
+The dependencies are as follows.  The versions probably don't matter much
+but I have included them in case they do.
+
+* g++ (Ubuntu 9.3.0-10ubuntu2) 9.3.0
+* python (3.8.2)
+* gEDA (1.8.2) - if you want to regenerate schematics/circuit.png which is done manually
+
+
 
